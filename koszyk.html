@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Koszyk - Księgarnia Online</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">Księgarnia Online</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Strona Główna</a></li>
+                <li><a href="kategorie.html">Kategorie</a></li>
+                <li><a href="koszyk.html">Koszyk</a></li>
+                <li><a href="logowanie.html">Zaloguj się</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Twój koszyk</h1>
+        
+        <div class="cart-container">
+            <div class="cart-items">
+            </div>
+
+            <div class="cart-summary">
+                <h2>Podsumowanie zamówienia</h2>
+            </div>
+        </div>
+
+        <div class="payment-form">
+            <h2>Dane do płatności</h2>
+            <form id="payment-form">
+                <div class="form-group">
+                    <label for="card-number">Numer karty:</label>
+                    <input type="text" id="card-number" name="card-number" placeholder="1234 5678 9012 3456" required>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="expiry">Data ważności:</label>
+                        <input type="text" id="expiry" name="expiry" placeholder="MM/RR" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="cvv">CVV:</label>
+                        <input type="text" id="cvv" name="cvv" placeholder="123" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="name">Imię i nazwisko:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <button type="submit">Zapłać</button>
+            </form>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html> 

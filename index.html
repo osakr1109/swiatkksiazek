@@ -1,61 +1,51 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Książki</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Księgarnia Online</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <h1>Książki</h1>
-    <nav>
-      <ul>
-        <li><a href="category.html">Kategorie</a></li>
-        <li><a href="cart.html">Koszyk</a></li>
-        <li><a href="login.html">Logowanie</a></li>
-        <li><a href="registration.html">Rejestracja</a></li>
-      </ul>
-    </nav>
-  </header>
-  
-  <main>
-    <section id="featured-books">
-      <h2>Nowości</h2>
-      <div class="book-gallery">
-        <a href="product.html">
-          <img src="img/61x9NsZp3GL._AC_UF1000,1000_QL80_.jpg" alt="Książka 1">
-          <p>Książka</p>
-        </a>
-        <a href="product2.html">
-          <img src="img/518OdvSB8QL._SY445_SX342_.jpg" alt="Książka 2">
-          <p>Książka</p>
-        </a>
-        <a href="product3.html">
-          <img src="img/51P3NlbkUZL._SY466_.jpg" alt="Książka 3">
-          <p>Książka</p>
-        </a>
-      </div>
-    </section>
-    
-    <section id="new-releases">
-      <h2>Wybrane dla ciebie</h2>
-      <div class="book-gallery">
-        <a href="product4.html">
-          <img src="img/pobrane.jpg" alt="Nowość 1">
-          <p>Nowość</p>
-        </a>
-        <a href="product5.html">
-          <img src="img/51jJH4eNxLL._SY445_SX342_.jpg" alt="Nowość 2">
-          <p>Nowość</p>
-        </a>
-      </div>
-    </section>
-  </main>
-  
-  <footer>
-    <p>Książki</p>
-  </footer>
+    <header>
+        <nav>
+            <div class="logo">Księgarnia Online</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Strona Główna</a></li>
+                <li><a href="kategorie.html">Kategorie</a></li>
+                <li><a href="koszyk.html">Koszyk</a></li>
+                <li><a href="logowanie.html">Zaloguj się</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1>Witaj w naszej księgarni!</h1>
+            <p>Odkryj świat książek w najlepszych cenach</p>
+        </section>
+
+        <section class="featured-books">
+            <h2>Polecane książki</h2>
+            <div class="book-grid">
+                <div class="book-card" data-id="1">
+                    <img src="ab67616d0000b2733159d157b1d3f13bbd9efbe0.jpg" alt="Okładka książki">
+                    <h3>Władca Dusz</h3>
+                    <p>J.R.R. Tolkien</p>
+                    <p class="price">49,99 zł</p>
+                    <button>Dodaj do koszyka</button>
+                </div>
+                <div class="book-card" data-id="2">
+                    <img src="9972090.png" alt="Okładka książki">
+                    <h3>Harry Spotter</h3>
+                    <p>J.K. Rowling</p>
+                    <p class="price">39,99 zł</p>
+                    <button>Dodaj do koszyka</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
 </body>
 </html>
-
