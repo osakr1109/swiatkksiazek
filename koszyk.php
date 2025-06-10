@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="pl">
 <head>
@@ -11,10 +14,18 @@
         <nav>
             <div class="logo">Księgarnia Online</div>
             <ul class="nav-links">
-                <li><a href="index.html">Strona Główna</a></li>
-                <li><a href="kategorie.html">Kategorie</a></li>
-                <li><a href="koszyk.html">Koszyk</a></li>
-                <li><a href="logowanie.html">Zaloguj się</a></li>
+                <li><a href="index.php">Strona Główna</a></li>
+                <li><a href="kategorie.php">Kategorie</a></li>
+                <li><a href="koszyk.php">Koszyk</a></li>
+                <?php if (isset($_SESSION['user_id'])): ?>
+                    <li class="user-info">
+                        <span class="login-text">Zalogowany jako:</span>
+                        <strong><?php echo htmlspecialchars($_SESSION['user_name']); ?></strong>
+                    </li>
+                    <li><a href="logout.php">Wyloguj się</a></li>
+                <?php else: ?>
+                    <li><a href="logowanie.php">Zaloguj się</a></li>
+                <?php endif; ?>
             </ul>
         </nav>
     </header>
@@ -23,14 +34,17 @@
         <h1>Twój koszyk</h1>
         
         <div class="cart-container">
-            <div class="cart-items">
+            <div id="cart-items" class="cart-items">
+                <!-- Elementy koszyka będą generowane dynamicznie przez JavaScript -->
             </div>
 
-            <div class="cart-summary">
+            <div id="cart-summary" class="cart-summary">
                 <h2>Podsumowanie zamówienia</h2>
+                <!-- Podsumowanie będzie generowane dynamicznie przez JavaScript -->
             </div>
         </div>
 
+        <?php if (isset($_SESSION['user_id'])): ?>
         <div class="payment-form">
             <h2>Dane do płatności</h2>
             <form id="payment-form">
@@ -50,12 +64,24 @@
                 </div>
                 <div class="form-group">
                     <label for="name">Imię i nazwisko:</label>
-                    <input type="text" id="name" name="name" required>
+                    <input type="text" id="name" name="name" value="<?php echo htmlspecialchars($_SESSION['user_name']); ?>" required>
                 </div>
                 <button type="submit">Zapłać</button>
             </form>
         </div>
+        <?php else: ?>
+        <div class="login-prompt">
+            <h2>Aby dokonać zakupu, zaloguj się lub zarejestruj</h2>
+            <div class="auth-buttons">
+                <a href="logowanie.php" class="btn">Zaloguj się</a>
+                <a href="register.php" class="btn">Zarejestruj się</a>
+            </div>
+        </div>
+        <?php endif; ?>
     </main>
+
+    <footer>
+    </footer>
 
     <script src="script.js"></script>
 </body>
